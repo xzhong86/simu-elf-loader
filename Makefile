@@ -11,6 +11,9 @@ libElfLoader.a : ElfLoader.o  ExeLoader.o
 %.o : %.cc
 	$(CXX) -O3 -std=c++11 -I. -c -o $@ $<
 
+test.elf : test.cc libElfLoader.a
+	$(CXX) -std=c++11 -o $@ $^
+
 clean :
 	rm *.o *.a
 
