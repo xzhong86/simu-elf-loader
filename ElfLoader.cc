@@ -110,7 +110,7 @@ struct ElfInfo {
                 ei[EI_MAG3] == ELFMAG3 );
     }
     bool isExecutable() const { return ELF_M(is_64, ehdr, e_type) == ET_EXEC; }
-    bool readInitEhdr(std::ifstream &input) {
+    void readInitEhdr(std::ifstream &input) {
         input.seekg(0);
         input.read((char*)&ehdr, sizeof(ehdr));
         is_64 = ei_class() == ELFCLASS64;
