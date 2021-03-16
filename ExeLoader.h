@@ -50,6 +50,12 @@ protected:
     CallBack cb_;
     addr_t entry_point_;
     addr_t vm_start_, vm_end_;  // memory region used
+
+public:
+    const string &getPath() const { return path_; }
+    addr_t getEntryPoint()  const { return entry_point_; }
+    addr_t getVMStart()     const { return vm_start_; }
+    addr_t getVMEnd()       const { return vm_end_; }
 };
 
 // create an executable load which math the file format
